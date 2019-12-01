@@ -31,17 +31,18 @@ const config = env => ({
       new webpack.optimize.UglifyJsPlugin(),
     ] : []),
   ],
+  devtool: 'source-map',
   module: {
     rules: [
       {
         test: /\.tsx?$/,
-        exclude: /node_modules/,
+        include: [path.resolve(__dirname + '/src')],
         loader: 'babel-loader',
       },
       {
-        test: /\.js$/,
-        use: ["source-map-loader"],
-        enforce: "pre"
+        test: /\.(eot|woff|woff2|ttf|svg|png|jpg)$/,
+        include: [path.resolve(__dirname + '/src')],
+        loader: 'url-loader?limit=50000&name=[name].[ext]',
       },
     ],
   },
