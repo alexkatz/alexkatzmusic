@@ -1,7 +1,7 @@
 {
-  "name": "alexkatzmusic",
+  "name": "alexkatzmusic-client",
   "version": "1.0.0",
-  "description": "My Personal Website",
+  "description": "my personal website client",
   "main": "dist/index.js",
   "author": "Alex Katz",
   "license": "MIT",
