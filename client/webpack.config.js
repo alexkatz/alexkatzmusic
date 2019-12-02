@@ -21,7 +21,7 @@ const config = env => ({
     new HtmlWebpackPlugin({
       hash: true,
       filename: 'index.html',
-
+      title: 'Alex Katz',
     }),
     new HtmlWebpackRootPlugin(),
     ...(env === 'production' ? [
