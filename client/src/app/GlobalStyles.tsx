@@ -1,9 +1,8 @@
 import React from 'react';
 import { Global, css } from '@emotion/core';
-import { Constants } from '../shared/constants';
 import { Color } from '../shared/colors';
-import muliExtraLight from '../fonts/Muli-ExtraLight.ttf';
-import muliRegular from '../fonts/Muli-Regular.ttf';
+import muliExtraLight from '../assets/font/Muli-ExtraLight.ttf';
+import muliRegular from '../assets/font/Muli-Regular.ttf';
 
 export const GlobalStyles: React.FC = () => (
   <Global
@@ -28,12 +27,14 @@ export const GlobalStyles: React.FC = () => (
         font-family: 'Muli-ExtraLight';
       }
 
+      * {
+        cursor: default;
+      }
+
       #root {
         display: grid;
-        grid-template-rows: auto;
+        grid-template-rows: 100px 300px auto;
         grid-template-columns: auto;
-        justify-items: center;
-        align-items: center;
       }
     `}
   />
