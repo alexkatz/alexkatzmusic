@@ -3,6 +3,7 @@ import { css } from '@emotion/core';
 import { Constants } from '../shared/constants';
 import { SocialMediaLinks } from '../socialMediaLinks/SocialMediaLinks';
 import { HeaderItem, HeaderItemProps } from './HeaderItem';
+import { useHistory, useLocation, useParams, useRouteMatch } from 'react-router-dom';
 
 enum HeaderItemName {
   MUSIC = 'music',
@@ -11,8 +12,8 @@ enum HeaderItemName {
 }
 
 export const Header: React.FC = () => {
-  const [selectedHeaderItem, setSelectedHeaderItem] = useState<HeaderItemName>(HeaderItemName.MUSIC);
-  console.log(selectedHeaderItem);
+  const history = useHistory();
+  const { headerItemValue } = useParams<{ headerItemValue: string }>();
   return (
     <div
       css={css`
@@ -39,14 +40,19 @@ export const Header: React.FC = () => {
       {
         Object.keys(HeaderItemName).map(key => {
           const value: HeaderItemName = HeaderItemName[key]
+          const isHighlighted = ((): boolean => {
+            switch (value) {
+              case HeaderItemName.MUSIC: return headerItemValue == null;
+              default: return value === headerItemValue;
+            }
+          })()
           return (
             <HeaderItem
               key={key}
               text={value}
-              isHighlighted={value === selectedHeaderItem}
+              isHighlighted={isHighlighted}
               onClick={() => {
-                setSelectedHeaderItem(value);
-                
+                history.push(`/${value === HeaderItemName.MUSIC ? '' : value}`)
               }}
             />
           )

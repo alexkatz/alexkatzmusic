@@ -16,6 +16,7 @@ const config = env => ({
   },
   devServer: {
     contentBase: path.resolve(__dirname + '/dist'),
+    historyApiFallback: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
