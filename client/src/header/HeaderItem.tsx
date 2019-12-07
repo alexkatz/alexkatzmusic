@@ -1,7 +1,7 @@
 import React from 'react';
 import { css } from '@emotion/core';
 import { Constants } from '../shared/constants';
-import { motion, Variants } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 enum Variant {
   HIGHLIGHTED = 'highlighted',

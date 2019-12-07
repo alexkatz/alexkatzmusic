@@ -4,7 +4,7 @@ import { Color } from '../shared/colors';
 import muliExtraLight from '../assets/font/Muli-ExtraLight.ttf';
 import muliRegular from '../assets/font/Muli-Regular.ttf';
 import { Constants } from '../shared/constants';
-import budapestFerrisWheelImage from '../assets/image/budapestferriswheel.jpg';
+import skyblurbackground from '../assets/image/skyblurbackground.jpg';
 import rollingBlueAlbumCover from '../assets/image/rolling_blue_album_art_1024.png';
 
 export const GlobalStyles: React.FC = () => (
@@ -33,8 +33,10 @@ export const GlobalStyles: React.FC = () => (
       #background-image {
         width: 100%;
         height: 100%;
-        background-image: url(${rollingBlueAlbumCover});
+        background-image: url(${skyblurbackground});
         background-size: cover;
+        /* transform: rotate(180deg); */
+        transform: scale(-1, 1);
       }
 
       html, body, #root {
