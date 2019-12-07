@@ -24,10 +24,11 @@ export const HeaderItem: React.FC<HeaderItemProps> = ({ text, isHighlighted, onC
         align-items: center;
         justify-content: center;
         height: 100%;
-        width: 60px;
+        min-width: 80px;
+        margin-left: ${Constants.HEADER_MARGIN}px;
+        margin-right: ${Constants.HEADER_MARGIN}px;
         color: white;
         font-family: ${isHighlighted ? 'Muli-Regular' : 'Muli-ExtraLight'};
-        margin-right: ${Constants.HEADER_MARGIN}px;
     `}
       variants={{
         [Variant.HIGHLIGHTED]: {

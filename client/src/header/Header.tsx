@@ -9,6 +9,7 @@ enum HeaderItemName {
   MUSIC = 'music',
   PRODUCTION = 'production',
   APPS = 'apps',
+  ABOUT = 'about',
 }
 
 export const Header: React.FC = () => {
@@ -21,6 +22,7 @@ export const Header: React.FC = () => {
         display: flex;
         justify-content: flex-end;
         align-items: center;
+        padding-right: ${Constants.HEADER_MARGIN}px;
       `}
     >
       <div
