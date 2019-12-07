@@ -3,8 +3,9 @@ import { GlobalStyles } from './GlobalStyles';
 import { Header } from '../header/Header';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Music } from '../music/Music';
-import { Production } from '../production/Production';
+import { Studio } from '../production/Production';
 import { Apps } from '../apps/Apps';
+import { HeaderItemName } from '../shared/HeaderItemName';
 
 export const App: React.FC = () => (
   <>
@@ -15,8 +16,8 @@ export const App: React.FC = () => (
       </div>
       <Route path='/:headerItemValue?' component={Header} />
       <Switch>
-        <Route path='/production' component={Production} />
-        <Route path='/apps' component={Apps} />
+        <Route path={`/${HeaderItemName.STUDIO}`} component={Studio} />
+        <Route path={`/${HeaderItemName.APPS}`} component={Apps} />
         <Route path='/' component={Music} />
       </Switch>
     </Router>

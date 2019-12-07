@@ -28,6 +28,7 @@ export const GlobalStyles: React.FC = () => (
         left: 0;
         top: 0;
         z-index: -1;
+        transform: rotate(180deg);
       }
 
       #background-image {
@@ -35,8 +36,9 @@ export const GlobalStyles: React.FC = () => (
         height: 100%;
         background-image: url(${skyblurbackground});
         background-size: cover;
-        /* transform: rotate(180deg); */
+        background-position: bottom;
         transform: scale(-1, 1);
+        opacity: 0.6;
       }
 
       html, body, #root {
@@ -45,7 +47,7 @@ export const GlobalStyles: React.FC = () => (
       }
 
       body {
-        background: linear-gradient(180deg, ${Color.LIGHT_BLUE_BACKGROUND} 0%, ${Color.DARK_BLUE_BACKGROUND} 100%);
+        background-color: ${Color.DARK_BLUE_BACKGROUND};
         font-family: 'Muli-ExtraLight';
       }
 

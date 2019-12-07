@@ -2,6 +2,7 @@ import React from 'react';
 import { css } from '@emotion/core';
 import { Constants } from '../shared/constants';
 import { motion } from 'framer-motion';
+import { Color } from '../shared/colors';
 
 enum Variant {
   HIGHLIGHTED = 'highlighted',
@@ -24,11 +25,12 @@ export const HeaderItem: React.FC<HeaderItemProps> = ({ text, isHighlighted, onC
         align-items: center;
         justify-content: center;
         height: 100%;
-        min-width: 80px;
-        margin-left: ${Constants.HEADER_MARGIN}px;
-        margin-right: ${Constants.HEADER_MARGIN}px;
-        color: white;
+        width: 40px;
+        padding-left: ${Constants.MARGIN}px;
+        padding-right: ${Constants.MARGIN}px;
+        color: ${Color.WHITE};
         font-family: ${isHighlighted ? 'Muli-Regular' : 'Muli-ExtraLight'};
+        cursor: pointer;
     `}
       variants={{
         [Variant.HIGHLIGHTED]: {
@@ -46,7 +48,7 @@ export const HeaderItem: React.FC<HeaderItemProps> = ({ text, isHighlighted, onC
         opacity: { type: 'tween', duration: 0.35 }
       }}
       whileHover={{
-        opacity: 1
+        opacity: 1,
       }}
     >
       {text}
