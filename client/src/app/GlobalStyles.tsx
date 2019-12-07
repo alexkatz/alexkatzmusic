@@ -43,7 +43,7 @@ export const GlobalStyles: React.FC = () => (
       }
 
       body {
-        /* background: linear-gradient(180deg, ${Color.LIGHT_BLUE_BACKGROUND} 0%, ${Color.DARK_BLUE_BACKGROUND} 100%); */
+        background: linear-gradient(180deg, ${Color.LIGHT_BLUE_BACKGROUND} 0%, ${Color.DARK_BLUE_BACKGROUND} 100%);
         font-family: 'Muli-ExtraLight';
       }
 
