@@ -11,9 +11,6 @@ import { About } from '../about/About';
 export const App: React.FC = () => (
   <>
     <Router>
-      <div id="background-image-container">
-        <div id="background-image" />
-      </div>
       <Route path='/:headerItemValue?' component={Header} />
       <Switch>
         <Route path={`/${HeaderItemName.STUDIO}`} component={Studio} />

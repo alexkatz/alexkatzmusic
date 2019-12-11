@@ -8,8 +8,9 @@ import skyblurbackground from '../assets/image/skyblurbackground.jpg';
 import rollingBlueAlbumCover from '../assets/image/rolling_blue_album_art_1024.png';
 
 export const GlobalStyles: React.FC = () => (
-  <Global
-    styles={css`
+  <>
+    <Global
+      styles={css`
       @font-face {
         font-family: 'Muli-ExtraLight';
         src: url(${muliExtraLight});
@@ -61,5 +62,9 @@ export const GlobalStyles: React.FC = () => (
         grid-template-columns: auto;
       }
     `}
-  />
+    />
+    <div id="background-image-container">
+      <div id="background-image" />
+    </div>
+  </>
 );
