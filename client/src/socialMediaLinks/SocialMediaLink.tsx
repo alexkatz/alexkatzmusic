@@ -1,13 +1,17 @@
 import React from 'react';
 import { css } from '@emotion/core';
+import { motion, MotionProps } from 'framer-motion';
 
 interface SocialMediaLinkProps {
   svg: string;
 }
 
-export const SocialMediaLink: React.FC<SocialMediaLinkProps> = ({ svg, ...props }) => (
-  <div
+export const SocialMediaLink: React.FC<SocialMediaLinkProps & MotionProps> = ({ svg, ...props }) => (
+  <motion.div
     {...props}
+    css={css`
+      cursor: pointer;
+    `}
   >
     <img
       css={css`
@@ -17,5 +21,5 @@ export const SocialMediaLink: React.FC<SocialMediaLinkProps> = ({ svg, ...props 
     `}
       src={svg}
     />
-  </div>
+  </motion.div>
 );

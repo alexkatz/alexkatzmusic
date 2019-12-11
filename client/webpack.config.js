@@ -23,6 +23,7 @@ const config = env => ({
       hash: true,
       filename: 'index.html',
       title: 'Alex Katz',
+      meta: { viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no' }
     }),
     new HtmlWebpackRootPlugin(),
     ...(env === 'production' ? [

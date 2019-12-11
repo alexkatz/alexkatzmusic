@@ -1,0 +1,1 @@
+export const mediaAt = (width: number): string => `@media (max-width: ${width}px)`;

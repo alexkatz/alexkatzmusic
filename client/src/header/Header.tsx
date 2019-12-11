@@ -16,20 +16,22 @@ export const Header: React.FC = () => {
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        padding-right: ${Constants.MARGIN}px;
+        padding-right: ${Constants.PADDING}px;
+        padding-left: ${Constants.PADDING}px;
         text-shadow: ${Constants.TEXT_SHADOW};
       `}
     >
       <div
         css={css`
           color: ${Color.WHITE};
-          font-size: 50px;
+          font-size: 20px;
           height: 100%;
           display: flex;
           justify-content: center;
           align-items: center;
+          padding-left: ${Constants.MARGIN}px;
           margin-right: auto;
-          margin-left: 30px;
+          opacity: 0.5;
         `}
       >
         {Constants.HEADER_TITLE}
@@ -42,7 +44,7 @@ export const Header: React.FC = () => {
               case HeaderItemName.MUSIC: return headerItemValue == null;
               default: return value === headerItemValue;
             }
-          })()
+          })();
           return (
             <React.Fragment key={key}>
               <HeaderItem

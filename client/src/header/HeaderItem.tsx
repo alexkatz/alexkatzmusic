@@ -26,6 +26,12 @@ export const HeaderItem: React.FC<HeaderItemProps> = ({ text, isHighlighted, onC
         justify-content: center;
         height: 100%;
         width: 40px;
+
+        @media (max-width: 420px) {
+          width: 20px;
+          font-size: 12px;
+        }
+
         padding-left: ${Constants.MARGIN}px;
         padding-right: ${Constants.MARGIN}px;
         color: ${Color.WHITE};
