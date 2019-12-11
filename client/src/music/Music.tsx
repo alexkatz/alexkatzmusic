@@ -7,48 +7,53 @@ import { motion } from 'framer-motion';
 import { SocialMediaLinks } from '../socialMediaLinks/SocialMediaLinks';
 import { mediaAt } from '../shared/utils';
 
+const GridLine = {
+  CONTENT_COLUMN_START: 'content-column-start',
+  CONTENT_COLUMN_END: 'content-column-end',
+}
+
 export const Music: React.FC = () => (
   <div
     css={css`
     grid-row-start: 2;
     display: grid;
-    grid-template-columns: auto [content-column-start] 1200px [content-column-end] auto;  
+    grid-template-columns: auto [${GridLine.CONTENT_COLUMN_START}] 1200px [${GridLine.CONTENT_COLUMN_END}] auto;  
     grid-template-rows: [album-row-start] auto;
     color: ${Color.WHITE};
     text-shadow: ${Constants.TEXT_SHADOW};
     font-size: 24px;
 
     ${mediaAt(Constants.MEDIA_BREAKPOINTS.SMALLER_DESKTOP)} {
-      grid-template-columns: auto [content-column-start] 85% [content-column-end] auto;  
+      grid-template-columns: auto [${GridLine.CONTENT_COLUMN_START}] 85% [${GridLine.CONTENT_COLUMN_END}] auto;  
     }
 
     ${mediaAt(Constants.MEDIA_BREAKPOINTS.TABLET)} {
-      grid-template-columns: auto [content-column-start] 578px [content-column-end] auto;  
+      grid-template-columns: auto [${GridLine.CONTENT_COLUMN_START}] 578px [${GridLine.CONTENT_COLUMN_END}] auto;  
     }
 
     ${mediaAt(Constants.MEDIA_BREAKPOINTS.MOBILE)} {
-      grid-template-columns: [content-column-start] auto [content-column-end];  
+      grid-template-columns: [${GridLine.CONTENT_COLUMN_START}] auto [${GridLine.CONTENT_COLUMN_END}];  
     }
   `}
   >
     <div
       css={css`
         margin-top: 50px;
-        grid-column: content-column-start;
+        grid-column: ${GridLine.CONTENT_COLUMN_START};
         grid-row: album-row-start;
         display: grid;
         grid-template-columns: [text-start] 50% [album-start] 50% [album-end];
         grid-template-rows: auto 1fr;
 
-        ${mediaAt(1200)} {
+        ${mediaAt(Constants.MEDIA_BREAKPOINTS.SMALLER_DESKTOP)} {
           font-size: 20px;
         }
         
-        ${mediaAt(850)} {
+        ${mediaAt(Constants.MEDIA_BREAKPOINTS.TABLET)} {
           font-size: 14px;
         }
 
-        ${mediaAt(578)} {
+        ${mediaAt(600)} {
           font-size: 12px;
           margin-top: 0;
         }
