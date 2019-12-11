@@ -16,8 +16,8 @@ export const Header: React.FC = () => {
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        padding-right: ${Constants.PADDING}px;
-        padding-left: ${Constants.PADDING}px;
+        padding-right: ${Constants.EIGHT}px;
+        padding-left: ${Constants.EIGHT}px;
         text-shadow: ${Constants.TEXT_SHADOW};
       `}
     >
@@ -29,7 +29,7 @@ export const Header: React.FC = () => {
           display: flex;
           justify-content: center;
           align-items: center;
-          padding-left: ${Constants.MARGIN}px;
+          padding-left: ${Constants.SIXTEEN}px;
           margin-right: auto;
           opacity: 0.5;
         `}

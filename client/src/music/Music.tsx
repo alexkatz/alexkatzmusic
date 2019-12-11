@@ -18,7 +18,6 @@ export const Music: React.FC = () => (
     grid-row-start: 2;
     display: grid;
     grid-template-columns: auto [${GridLine.CONTENT_COLUMN_START}] 1200px [${GridLine.CONTENT_COLUMN_END}] auto;  
-    grid-template-rows: [album-row-start] auto;
     color: ${Color.WHITE};
     text-shadow: ${Constants.TEXT_SHADOW};
     font-size: 24px;
@@ -40,9 +39,7 @@ export const Music: React.FC = () => (
       css={css`
         margin-top: 50px;
         grid-column: ${GridLine.CONTENT_COLUMN_START};
-        grid-row: album-row-start;
         display: grid;
-        grid-template-columns: [text-start] 50% [album-start] 50% [album-end];
         grid-template-rows: auto 1fr;
 
         ${mediaAt(Constants.MEDIA_BREAKPOINTS.SMALLER_DESKTOP)} {
@@ -61,16 +58,33 @@ export const Music: React.FC = () => (
     >
       <div
         css={css`
-          grid-column-start: text-start;
-          margin-left: ${Constants.MARGIN}px;
-          margin-right: ${Constants.MARGIN}px;
+          padding-left: ${Constants.SIXTEEN}px;
+          padding-right: ${Constants.SIXTEEN}px;
         `}
       >
-        <p>
-          Hey everyone! I recently released my debut album, Rolling Blue.
+        <motion.img
+          css={css`
+            grid-column-start: album-start;
+            width: 50%;
+            float: right;
+            margin-bottom: ${Constants.SIXTEEN}px;
+            margin-left: ${Constants.SIXTEEN}px;
+            border: 2px solid ${Color.DARK_BLUE_BACKGROUND};
+            box-shadow: ${Constants.TEXT_SHADOW};
+            cursor: pointer;
+          `}
+          src={rollingBlueAlbumCover}
+          whileHover={{ scale: 1.01 }}
+          transition={{ scale: { type: 'spring', damping: 2, mass: 0.1 } }}
+        />
+        <p css={css`margin-top: 0;`}>
+          Hey everyone! I've recently released my first album, Rolling Blue.
         </p>
         <p>
-          It's about floating. It's got loads of reverb and delay. It's dense and ethereal at times, soft and ethereal at others.
+          It's about drifting. Through air. Through water. Through memory. Through lame metaphor, for sure.
+        </p>
+        <p>
+          It's got loads of reverb and delay. It's got heavy 7 string guitar. Blast beats. It's got beach sounds. Cello. Violin. Piano. Banjo. It's dense at times, soft at others. Ethereal always.
         </p>
         <p>
           It's a musical adventure I put my heart into,
@@ -79,39 +93,9 @@ export const Music: React.FC = () => (
           bossa nova, and orchestral arrangements.
         </p>
         <p>
-          That's all for now! Stay tuned for more releases to come.
+          Check it out on all platforms. And stay tuned for more music to come. 🤘
         </p>
       </div>
-      <div
-        css={css`
-          margin-right: ${Constants.MARGIN}px;
-        `}
-      >
-        <motion.img
-          css={css`
-            grid-column-start: album-start;
-            width: 100%;
-            border: 2px solid ${Color.DARK_BLUE_BACKGROUND};
-            box-shadow: ${Constants.TEXT_SHADOW};
-            margin-right: -${Constants.PADDING}px;
-            cursor: pointer;
-          `}
-          src={rollingBlueAlbumCover}
-          whileHover={{ scale: 1.01 }}
-          transition={{ scale: { type: 'spring', damping: 2, mass: 0.1 } }}
-        />
-      </div>
-      {/* <div
-        css={css`
-        grid-row-start: 2;
-        grid-column-start: text-start;
-        grid-column-end: album-end;
-        background-color: orange;
-        height: 100px;
-      `}
-      >
-
-      </div> */}
     </div>
   </div>
 );

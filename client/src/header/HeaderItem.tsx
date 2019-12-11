@@ -32,8 +32,8 @@ export const HeaderItem: React.FC<HeaderItemProps> = ({ text, isHighlighted, onC
           font-size: 12px;
         }
 
-        padding-left: ${Constants.MARGIN}px;
-        padding-right: ${Constants.MARGIN}px;
+        padding-left: ${Constants.SIXTEEN}px;
+        padding-right: ${Constants.SIXTEEN}px;
         color: ${Color.WHITE};
         font-family: ${isHighlighted ? 'Muli-Regular' : 'Muli-ExtraLight'};
         cursor: pointer;
