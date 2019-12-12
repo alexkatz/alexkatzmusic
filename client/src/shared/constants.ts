@@ -10,5 +10,5 @@ export const Constants = {
     SMALLER_DESKTOP: 1400,
     TABLET: 768,
     MOBILE: 578,
-  }
+  },
 };

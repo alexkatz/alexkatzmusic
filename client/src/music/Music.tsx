@@ -3,99 +3,86 @@ import { css } from '@emotion/core';
 import { Constants } from '../shared/constants';
 import rollingBlueAlbumCover from '../assets/image/rolling_blue_album_art_1024.png';
 import { Color } from '../shared/colors';
-import { motion } from 'framer-motion';
-import { SocialMediaLinks } from '../socialMediaLinks/SocialMediaLinks';
-import { mediaAt } from '../shared/utils';
-
-const GridLine = {
-  CONTENT_COLUMN_START: 'content-column-start',
-  CONTENT_COLUMN_END: 'content-column-end',
-}
+import { screenWidthAt } from '../shared/utils';
+import { SocialMediaLink } from '../socialMediaLinks/SocialMediaLink';
+import spotifySvg from '../assets/vector/spotify-logo.svg';
+import appleSvg from '../assets/vector/apple-music-logo.svg';
+import youtubeSvg from '../assets/vector/youtube-logo.svg';
+import bandcampSvg from '../assets/vector/bandcamp-logo.svg';
+import googleSvg from '../assets/vector/google-play-logo.svg';
 
 export const Music: React.FC = () => (
   <div
     css={css`
-    grid-row-start: 2;
-    display: grid;
-    grid-template-columns: auto [${GridLine.CONTENT_COLUMN_START}] 1200px [${GridLine.CONTENT_COLUMN_END}] auto;  
-    color: ${Color.WHITE};
-    text-shadow: ${Constants.TEXT_SHADOW};
-    font-size: 24px;
+      grid-row-start: 2;
+      display: grid;
+      margin-top: 64px;
+      grid-template-columns: auto [content-column-start] 1200px [content-column-end] auto;  
+      grid-template-rows: [social-media-row-one-start] auto 32px [social-media-row-two-start] auto 1fr;
+      color: ${Color.WHITE};
+      text-shadow: ${Constants.TEXT_SHADOW};
+      font-size: 24px;
+      justify-items: center;
 
-    ${mediaAt(Constants.MEDIA_BREAKPOINTS.SMALLER_DESKTOP)} {
-      grid-template-columns: auto [${GridLine.CONTENT_COLUMN_START}] 85% [${GridLine.CONTENT_COLUMN_END}] auto;  
-    }
+      ${screenWidthAt(Constants.MEDIA_BREAKPOINTS.SMALLER_DESKTOP)} {
+        grid-template-columns: auto [content-column-start] 85% [content-column-end] auto;  
+      }
 
-    ${mediaAt(Constants.MEDIA_BREAKPOINTS.TABLET)} {
-      grid-template-columns: auto [${GridLine.CONTENT_COLUMN_START}] 578px [${GridLine.CONTENT_COLUMN_END}] auto;  
-    }
+      ${screenWidthAt(Constants.MEDIA_BREAKPOINTS.TABLET)} {
+        grid-template-columns: auto [content-column-start] 578px [content-column-end] auto;  
+      }
 
-    ${mediaAt(Constants.MEDIA_BREAKPOINTS.MOBILE)} {
-      grid-template-columns: [${GridLine.CONTENT_COLUMN_START}] auto [${GridLine.CONTENT_COLUMN_END}];  
-    }
+      ${screenWidthAt(Constants.MEDIA_BREAKPOINTS.MOBILE)} {
+        grid-template-columns: [content-column-start] auto [content-column-end];  
+      }
   `}
   >
-    <div
-      css={css`
-        margin-top: 50px;
-        grid-column: ${GridLine.CONTENT_COLUMN_START};
-        display: grid;
-        grid-template-rows: auto 1fr;
-
-        ${mediaAt(Constants.MEDIA_BREAKPOINTS.SMALLER_DESKTOP)} {
-          font-size: 20px;
-        }
-        
-        ${mediaAt(Constants.MEDIA_BREAKPOINTS.TABLET)} {
-          font-size: 14px;
-        }
-
-        ${mediaAt(600)} {
-          font-size: 12px;
-          margin-top: 0;
-        }
-      `}
-    >
-      <div
-        css={css`
-          padding-left: ${Constants.SIXTEEN}px;
-          padding-right: ${Constants.SIXTEEN}px;
-        `}
-      >
-        <motion.img
+    {
+      [[spotifySvg, appleSvg, youtubeSvg], [bandcampSvg, googleSvg]].map((svgs, svgsIndex) => (
+        <div
+          key={svgsIndex}
           css={css`
-            grid-column-start: album-start;
-            width: 50%;
-            float: right;
-            margin-bottom: ${Constants.SIXTEEN}px;
-            margin-left: ${Constants.SIXTEEN}px;
-            border: 2px solid ${Color.DARK_BLUE_BACKGROUND};
-            box-shadow: ${Constants.TEXT_SHADOW};
-            cursor: pointer;
-          `}
-          src={rollingBlueAlbumCover}
-          whileHover={{ scale: 1.01 }}
-          transition={{ scale: { type: 'spring', damping: 2, mass: 0.1 } }}
-        />
-        <p css={css`margin-top: 0;`}>
-          Hey everyone! I've recently released my first album, Rolling Blue.
-        </p>
-        <p>
-          It's about drifting. Through air. Through water. Through memory. Through lame metaphor, for sure.
-        </p>
-        <p>
-          It's got loads of reverb and delay. It's got heavy 7 string guitar. Blast beats. It's got beach sounds. Cello. Violin. Piano. Banjo. It's dense at times, soft at others. Ethereal always.
-        </p>
-        <p>
-          It's a musical adventure I put my heart into,
-          spanning from banjo-infused progressive metal to vast acoustic ambience,
-          immersive soundscapes, psychedelic rock, electronic grooves,
-          bossa nova, and orchestral arrangements.
-        </p>
-        <p>
-          Check it out on all platforms. And stay tuned for more music to come. 🤘
-        </p>
-      </div>
-    </div>
+          grid-column-start: content-column-start;
+          grid-row-start: ${svgsIndex === 0 ? 'social-media-row-one-start' : 'social-media-row-two-start'};
+          display: flex;
+          align-items: center;
+          justify-content: space-evenly;
+          width: 50%;
+          /* background-color: rgba(0, 0, 0, .1); */
+        `}
+        >
+
+          {
+            svgs.map((svg, index) => (
+              <SocialMediaLink
+                key={index}
+                css={css`
+                  height: 30px;
+                  opacity: 0.4;
+
+                  ${svg === appleSvg && (css`
+                    position: relative;
+                    top: -4px;
+                  `)}
+
+                ${screenWidthAt(Constants.MEDIA_BREAKPOINTS.SMALLER_DESKTOP)} {
+                  height: 30px;
+                }
+
+                ${screenWidthAt(Constants.MEDIA_BREAKPOINTS.MOBILE)} {
+                  height: 25px;
+                }
+
+                ${screenWidthAt(330)} {
+                  width: 70px;
+                }
+              `}
+                svg={svg}
+              />
+            ))
+          }
+        </div>
+      ))
+    }
   </div>
 );

@@ -11,7 +11,19 @@ export const SocialMediaLink: React.FC<SocialMediaLinkProps & MotionProps> = ({ 
     {...props}
     css={css`
       cursor: pointer;
+      display: flex;
+      align-items: center;
     `}
+    transition={{
+      scale: { type: 'spring', damping: 2, mass: 0.1 },
+      opacity: { type: 'tween', duration: 0.35 }
+    }}
+    whileHover={{
+      opacity: 1,
+    }}
+    whileTap={{
+      scale: 0.98,
+    }}
   >
     <img
       css={css`
