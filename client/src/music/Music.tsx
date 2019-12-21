@@ -5,84 +5,98 @@ import rollingBlueAlbumCover from '../assets/image/rolling_blue_album_art_1024.p
 import { Color } from '../shared/colors';
 import { screenWidthAt } from '../shared/utils';
 import { SocialMediaLink } from '../socialMediaLinks/SocialMediaLink';
-import spotifySvg from '../assets/vector/spotify-logo.svg';
-import appleSvg from '../assets/vector/apple-music-logo.svg';
-import youtubeSvg from '../assets/vector/youtube-logo.svg';
-import bandcampSvg from '../assets/vector/bandcamp-logo.svg';
-import googleSvg from '../assets/vector/google-play-logo.svg';
+
+import { motion } from 'framer-motion';
+import { SocialMediaLinks } from '../socialMediaLinks/SocialMediaLinks';
+
+const MARGIN_LEFT_RIGHT = css`
+  margin-left: ${Constants.SIXTEEN}px;
+  margin-right: ${Constants.SIXTEEN}px;
+`;
 
 export const Music: React.FC = () => (
   <div
     css={css`
       grid-row-start: 2;
       display: grid;
-      margin-top: 64px;
       grid-template-columns: auto [content-column-start] 1200px [content-column-end] auto;  
-      grid-template-rows: [social-media-row-one-start] auto 32px [social-media-row-two-start] auto 1fr;
       color: ${Color.WHITE};
-      text-shadow: ${Constants.TEXT_SHADOW};
-      font-size: 24px;
+      text-shadow: ${Constants.TEXT_SHADOW};;
+      font-size: ${Constants.TWENTY_FOUR}px;
       justify-items: center;
+      grid-template-rows: min-content min-content auto;
+      padding-top: ${Constants.SIXTY_FOUR}px;
 
       ${screenWidthAt(Constants.MEDIA_BREAKPOINTS.SMALLER_DESKTOP)} {
         grid-template-columns: auto [content-column-start] 85% [content-column-end] auto;  
-      }
+      } 
 
       ${screenWidthAt(Constants.MEDIA_BREAKPOINTS.TABLET)} {
-        grid-template-columns: auto [content-column-start] 578px [content-column-end] auto;  
+        grid-template-columns: auto [content-column-start] ${Constants.MEDIA_BREAKPOINTS.MOBILE} [content-column-end] auto;  
+        padding-top: ${Constants.THIRTY_TWO}px;
       }
 
       ${screenWidthAt(Constants.MEDIA_BREAKPOINTS.MOBILE)} {
-        grid-template-columns: [content-column-start] auto [content-column-end];  
+        grid-template-columns: [content-column-start] auto [content-column-end];
       }
-  `}
+    `}
   >
-    {
-      [[spotifySvg, appleSvg, youtubeSvg], [bandcampSvg, googleSvg]].map((svgs, svgsIndex) => (
-        <div
-          key={svgsIndex}
-          css={css`
-          grid-column-start: content-column-start;
-          grid-row-start: ${svgsIndex === 0 ? 'social-media-row-one-start' : 'social-media-row-two-start'};
-          display: flex;
-          align-items: center;
-          justify-content: space-evenly;
-          width: 50%;
-          /* background-color: rgba(0, 0, 0, .1); */
-        `}
-        >
 
-          {
-            svgs.map((svg, index) => (
-              <SocialMediaLink
-                key={index}
-                css={css`
-                  height: 30px;
-                  opacity: 0.4;
+    <SocialMediaLinks
+      css={css`
+        grid-column-start: content-column-start;
+        margin-bottom: ${Constants.SIXTY_FOUR}px;
 
-                  ${svg === appleSvg && (css`
-                    position: relative;
-                    top: -4px;
-                  `)}
+        ${screenWidthAt(Constants.MEDIA_BREAKPOINTS.TABLET)} {
+          margin-bottom: ${Constants.THIRTY_TWO}px;
+        }
+      `}
+    />
+    <motion.img
+      css={css`
+        grid-column-start: content-column-start;
+        width: 55%;
+        ${MARGIN_LEFT_RIGHT};
+        margin-bottom: ${Constants.SIXTY_FOUR}px;
+        border: 2px solid ${Color.DARK_BLUE_BACKGROUND};
+        box-shadow: ${Constants.TEXT_SHADOW};
 
-                ${screenWidthAt(Constants.MEDIA_BREAKPOINTS.SMALLER_DESKTOP)} {
-                  height: 30px;
-                }
+        ${screenWidthAt(Constants.MEDIA_BREAKPOINTS.TABLET)} {
+          margin-bottom: ${Constants.THIRTY_TWO}px;
+        }
+      `}
+      src={rollingBlueAlbumCover}
+      whileHover={{ scale: 1.005 }}
+      transition={{ scale: { type: 'spring', damping: 2, mass: 0.1 } }}
+    />
+    <div
+      css={css`
+        grid-column-start: content-column-start;
+        ${MARGIN_LEFT_RIGHT};
 
-                ${screenWidthAt(Constants.MEDIA_BREAKPOINTS.MOBILE)} {
-                  height: 25px;
-                }
-
-                ${screenWidthAt(330)} {
-                  width: 70px;
-                }
-              `}
-                svg={svg}
-              />
-            ))
-          }
-        </div>
-      ))
-    }
+        ${screenWidthAt(Constants.MEDIA_BREAKPOINTS.TABLET)} {
+          font-size: 14px
+        }
+      `}
+    >
+      <p>
+        Hey, Alex here. I made a record.
+      </p>
+      <p>
+        It's about drifting. Through air. Through water. Through memory. (And through lame metaphor, apparently).
+      </p>
+      <p>
+        It's got loads of reverb and delay. It's got heavy seven string guitar. Blast beats. Birds and waves. Forest and space. Cello. Violin. Piano. Banjo. It's dense at times, soft at others. Ethereal always.
+      </p>
+      <p>
+        It's a musical adventure I put my heart into,
+        spanning from banjo-infused progressive metal to vast acoustic ambience,
+        immersive soundscapes, psychedelic rock, electronic grooves,
+        bossa nova, and orchestral arrangements.
+      </p>
+      <p>
+        Give it a spin. Oh, and stay tuned for more music to come. 🤘
+      </p>
+    </div>
   </div>
 );

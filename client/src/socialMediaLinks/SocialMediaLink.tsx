@@ -28,7 +28,6 @@ export const SocialMediaLink: React.FC<SocialMediaLinkProps & MotionProps> = ({ 
     <img
       css={css`
       object-fit: contain;
-      width: 100%;
       height: 100%;
     `}
       src={svg}

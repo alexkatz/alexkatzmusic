@@ -1,52 +1,70 @@
 import React from 'react';
 import { css } from '@emotion/core';
 import { SocialMediaLink } from './SocialMediaLink';
-import appleMusicLogo from '../assets/vector/apple-music-logo.svg';
-import spotifyLogo from '../assets/vector/spotify-logo.svg';
-import instagramLogo from '../assets/vector/instagram-logo.svg';
-import facebookLogo from '../assets/vector/facebook-logo.svg';
-import bandcampLogo from '../assets/vector/bandcamp-logo.svg';
-import youtubeLogo from '../assets/vector/youtube-logo.svg';
-import googlePlayLogo from '../assets/vector/google-play-logo.svg';
-import amazonLogo from '../assets/vector/amazon-logo.svg';
+import spotifySvg from '../assets/vector/spotify-logo.svg';
+import appleSvg from '../assets/vector/apple-music-logo.svg';
+import youtubeSvg from '../assets/vector/youtube-logo.svg';
+import bandcampSvg from '../assets/vector/bandcamp-logo.svg';
+import googleSvg from '../assets/vector/google-play-logo.svg';
 import { Constants } from '../shared/constants';
+import { screenWidthAt } from '../shared/utils';
 
-export const SocialMediaLinks: React.FC = props => {
-  const rowOneLogos = [spotifyLogo, appleMusicLogo, googlePlayLogo, amazonLogo, bandcampLogo];
-  const rowTwoLogos = [youtubeLogo, facebookLogo, instagramLogo];
-  return (
-    <div
-      {...props}
-      css={css`
-        display: grid;
-        grid-template-columns: auto 700px auto;
-      `}
-    >
-      <div
-        css={css`
-          grid-column: 2;
-          height: 100%;
+
+
+export const SocialMediaLinks: React.FC = props => (
+  <div
+    css={css`
+      width: 100%;
+    `}
+    {...props}
+  >
+    {
+      [[spotifySvg, appleSvg, googleSvg], [youtubeSvg, bandcampSvg]].map((svgs, svgsIndex) => (
+        <div
+          css={css`
           display: flex;
-          flex-direction: row;
-          flex-wrap: wrap;
-          justify-content: space-around;
+          justify-content: center;
+          ${svgsIndex === 0 && css`
+            margin-bottom: ${Constants.SIXTEEN}px;
+          `}
         `}
-      >
-        {
-          [...rowOneLogos, ...rowTwoLogos].map((logo, index) => (
-            <SocialMediaLink
-              key={'logo' + index}
-              css={css`
-                height: 50%; 
-                width: 100px;
-                margin-right: 20px;
-                opacity: 0.4;
-              `}
-              svg={logo}
-            />
-          ))
-        }
-      </div>
-    </div>
-  );
-};
+        >
+          {
+            svgs.map((svg, svgIndex) => (
+              <SocialMediaLink
+                key={svgIndex}
+                svg={svg}
+                css={css`
+                  height: 30px;
+                  opacity: 0.4;
+    
+                  ${screenWidthAt(Constants.MEDIA_BREAKPOINTS.TABLET)} {
+                    height: 20px;
+                  }
+    
+                  ${screenWidthAt(400)} {
+                    height: 15px;
+                  }
+    
+                  ${svg === appleSvg && css`
+                    position: relative;
+                    top: -1px;
+                  `}
+    
+                  ${svg === spotifySvg && css`
+                    position: relative;
+                    top: 2px;
+                  `}
+    
+                  ${svgIndex !== svgs.length - 1 && css`
+                    margin-right: 10%;
+                  `}
+                `}
+              />
+            ))
+          }
+        </div>
+      ))
+    }
+  </div>
+);

@@ -2,6 +2,8 @@ export const Constants = {
   EIGHT: 8,
   SIXTEEN: 16,
   TWENTY_FOUR: 24,
+  THIRTY_TWO: 32,
+  SIXTY_FOUR: 64,
   HEADER_SIZE: 70,
   ALBUM_COVER_SIZE: 512,
   HEADER_TITLE: 'alex katz',
