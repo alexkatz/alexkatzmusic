@@ -34,6 +34,7 @@ export const SocialMediaLinks: React.FC = props => (
             svgs.map((svg, svgIndex) => (
               <SocialMediaLink
                 key={svgIndex}
+
                 svg={svg}
                 css={css`
                   height: 40px;

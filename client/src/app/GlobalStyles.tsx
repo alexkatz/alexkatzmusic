@@ -21,6 +21,10 @@ export const GlobalStyles: React.FC = () => (
         src: url(${muliRegular});
       }
 
+      * {
+        box-sizing: border-box;
+      }
+
       #background-image-container {
         filter: blur(16px);
         width: 100%;

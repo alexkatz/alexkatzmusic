@@ -6,7 +6,7 @@ interface SocialMediaLinkProps {
   svg: string;
 }
 
-export const SocialMediaLink: React.FC<SocialMediaLinkProps & MotionProps> = ({ svg, ...props }) => (
+export const SocialMediaLink: React.FC<SocialMediaLinkProps & MotionProps & React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>> = ({ svg, ...props }) => (
   <motion.div
     {...props}
     css={css`
