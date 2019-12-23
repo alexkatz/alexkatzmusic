@@ -21,6 +21,7 @@ export const SocialMediaLinks: React.FC = props => (
     {
       [[spotifySvg, appleSvg, googleSvg], [youtubeSvg, bandcampSvg]].map((svgs, svgsIndex) => (
         <div
+          key={svgsIndex}
           css={css`
           display: flex;
           justify-content: center;
