@@ -8,9 +8,10 @@ export const Studio: React.FC = () => (
       grid-row-start: 2;
       display: flex;
       justify-content: center;
+      align-items: center;
       color: ${Color.WHITE};
     `}
   >
-    coming soon.
+    coming soon. 🤘
   </div >
 );

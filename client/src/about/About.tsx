@@ -71,14 +71,17 @@ export const About: React.FC = () => (
           whileHover={{ scale: 1.01 }}
           transition={{ scale: { type: 'spring', damping: 2, mass: 0.1 } }}
         />
-        <p css={css`margin-top: 0;`}>
-          Hey everyone! I've recently released my first album, Rolling Blue.
+        <p>
+          Hey, Alex here. I'm a musician, audio producer, and software engineer living in NYC. 
         </p>
         <p>
-          It's about drifting. Through air. Through water. Through memory. Through lame metaphor, for sure.
+          I made a record.
         </p>
         <p>
-          It's got loads of reverb and delay. It's got heavy 7 string guitar. Blast beats. It's got beach sounds. Cello. Violin. Piano. Banjo. It's dense at times, soft at others. Ethereal always.
+          It's about drifting. Through air. Through water. Through memory. (And through lame metaphor, apparently).
+        </p>
+        <p>
+          It's got loads of reverb and delay. It's got heavy seven string guitar. Blast beats. Birds and waves. Forest and space. Cello. Violin. Piano. Banjo. It's dense at times, soft at others. Ethereal always.
         </p>
         <p>
           It's a musical adventure I put my heart into,
@@ -87,7 +90,7 @@ export const About: React.FC = () => (
           bossa nova, and orchestral arrangements.
         </p>
         <p>
-          Check it out on all platforms. And stay tuned for more music to come. 🤘
+          Give it a spin. Oh, and stay tuned for more music to come. 🤘
         </p>
       </div>
     </div>

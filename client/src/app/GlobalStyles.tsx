@@ -58,6 +58,7 @@ export const GlobalStyles: React.FC = () => (
       
       #root {
         display: grid;
+        height: 100%;
         grid-template-rows: ${Constants.HEADER_SIZE}px auto;
         grid-template-columns: auto;
       }

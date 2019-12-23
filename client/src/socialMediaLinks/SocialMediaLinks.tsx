@@ -25,7 +25,7 @@ export const SocialMediaLinks: React.FC = props => (
           display: flex;
           justify-content: center;
           ${svgsIndex === 0 && css`
-            margin-bottom: ${Constants.SIXTEEN}px;
+            margin-bottom: ${Constants.THIRTY_TWO}px;
           `}
         `}
         >
@@ -35,10 +35,18 @@ export const SocialMediaLinks: React.FC = props => (
                 key={svgIndex}
                 svg={svg}
                 css={css`
-                  height: 30px;
+                  height: 40px;
                   opacity: 0.4;
+
+                  ${screenWidthAt(Constants.MEDIA_BREAKPOINTS.SMALLER_DESKTOP)} {
+                    height: 40px;
+                  }
     
                   ${screenWidthAt(Constants.MEDIA_BREAKPOINTS.TABLET)} {
+                    height: 30px;
+                  }
+
+                  ${screenWidthAt(Constants.MEDIA_BREAKPOINTS.MOBILE)} {
                     height: 20px;
                   }
     
@@ -57,7 +65,7 @@ export const SocialMediaLinks: React.FC = props => (
                   `}
     
                   ${svgIndex !== svgs.length - 1 && css`
-                    margin-right: 10%;
+                    margin-right: 15%;
                   `}
                 `}
               />
