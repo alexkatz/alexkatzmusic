@@ -76,13 +76,10 @@ export const About: React.FC = () => {
             transition={{ scale: { type: 'spring', damping: 2, mass: 0.1 } }}
           />
           <p>
-            Hey, Alex here. I'm a musician, audio producer, and software engineer living in NYC.
+            Hey, Alex here.
           </p>
           <p>
-            I just made a record.
-          </p>
-          <p>
-            It's about drifting. Through air. Through water. Through memory. (And through lame metaphor, apparently).
+            Long overdue, but I just made my first record.
           </p>
           <p>
             It's got loads of reverb and delay. It's got heavy seven string guitar. Blast beats. Birds and waves. Forest and space. Cello. Violin. Piano. Banjo. It's dense at times, soft at others. Ethereal always.
