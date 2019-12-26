@@ -14,7 +14,7 @@ interface AlbumCoverProps {
 export const AlbumCover: React.FC<AlbumCoverProps> = ({ maxSize }) => {
   const history = useHistory();
   return (
-    <AutoSizer>
+    <AutoSizer disableHeight>
       {({ width }) => {
         const containerSize = Math.min(width, maxSize);
         const halfContainerSize = containerSize / 2;
