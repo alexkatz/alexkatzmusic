@@ -17,7 +17,6 @@ export const About: React.FC = () => {
         grid-template-columns: auto [content-column-start] 1200px [content-column-end] auto;  
         color: ${Color.WHITE};
         text-shadow: ${Constants.TEXT_SHADOW};
-        font-size: 24px;
         height: 80%;
         align-items: center;
 
@@ -30,6 +29,7 @@ export const About: React.FC = () => {
         }
 
         ${screenWidthAt(Constants.MEDIA_BREAKPOINTS.MOBILE)} {
+          align-items: flex-start;
           grid-template-columns: [content-column-start] auto [content-column-end];  
         }
     `}
@@ -41,15 +41,15 @@ export const About: React.FC = () => {
           grid-template-rows: auto 1fr;
 
           ${screenWidthAt(Constants.MEDIA_BREAKPOINTS.SMALLER_DESKTOP)} {
-            font-size: 20px;
+            font-size: 15px;
           }
           
           ${screenWidthAt(Constants.MEDIA_BREAKPOINTS.TABLET)} {
-            font-size: 14px;
+            font-size: 12px;
           }
 
           ${screenWidthAt(600)} {
-            font-size: 12px;
+            font-size: 10px;
           }
         `}
       >
