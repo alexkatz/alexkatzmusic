@@ -33,7 +33,6 @@ export const AlbumCover: React.FC<AlbumCoverProps> = ({ maxSize, minSize }) => {
           >
             <motion.img
               css={css`
-                border: 2px solid ${Color.DARK_BLUE_BACKGROUND};
                 object-fit: contain;
                 height: 100%;
                 box-shadow: ${Constants.TEXT_SHADOW};

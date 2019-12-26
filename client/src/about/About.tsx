@@ -45,11 +45,11 @@ export const About: React.FC = () => {
           }
           
           ${screenWidthAt(Constants.MEDIA_BREAKPOINTS.TABLET)} {
-            font-size: 12px;
+            font-size: 14px;
           }
 
           ${screenWidthAt(600)} {
-            font-size: 10px;
+            font-size: 12px;
           }
         `}
       >
@@ -66,7 +66,6 @@ export const About: React.FC = () => {
               float: right;
               margin-bottom: ${Constants.SIXTEEN}px;
               margin-left: ${Constants.THIRTY_TWO}px;
-              border: 2px solid ${Color.DARK_BLUE_BACKGROUND};
               box-shadow: ${Constants.TEXT_SHADOW};
               cursor: pointer;
             `}
