@@ -9,14 +9,16 @@ import rollingBlueAlbumCover from '../assets/image/rolling_blue_album_art_1024.j
 
 interface AlbumCoverProps {
   maxSize?: number;
+  minSize?: number;
 }
 
-export const AlbumCover: React.FC<AlbumCoverProps> = ({ maxSize }) => {
+export const AlbumCover: React.FC<AlbumCoverProps> = ({ maxSize, minSize }) => {
   const history = useHistory();
   return (
-    <AutoSizer disableHeight>
-      {({ width }) => {
-        const containerSize = Math.min(width, maxSize);
+    <AutoSizer>
+      {({ width, height }) => {
+        let containerSize = Math.min(width, height);
+        containerSize = containerSize < maxSize ? (containerSize < minSize ? minSize : containerSize) : maxSize;
         const halfContainerSize = containerSize / 2;
         return (
           <div
@@ -26,6 +28,7 @@ export const AlbumCover: React.FC<AlbumCoverProps> = ({ maxSize }) => {
               top: 0,
               left: (width / 2) - halfContainerSize,
               position: 'relative',
+              marginBottom: Constants.THIRTY_TWO,
             }}
           >
             <motion.img

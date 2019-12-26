@@ -45,10 +45,14 @@ export const Music: React.FC = () => {
           css={css`
             margin-bottom: ${Constants.THIRTY_TWO}px;
             width: 100%;
+            height: 100%;
             overflow: visible;
           `}
         >
-          <AlbumCover maxSize={900} />
+          <AlbumCover 
+            maxSize={900} 
+            minSize={320}
+          />
         </div>
       </div>
     </div>
