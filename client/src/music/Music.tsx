@@ -47,6 +47,7 @@ export const Music: React.FC = () => {
             width: 100%;
             height: 100%;
             overflow: visible;
+            display: flex;
           `}
         >
           <AlbumCover 

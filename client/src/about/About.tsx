@@ -49,7 +49,7 @@ export const About: React.FC = () => {
           }
 
           ${screenWidthAt(600)} {
-            font-size: 12px;
+            font-size: 13px;
           }
         `}
       >

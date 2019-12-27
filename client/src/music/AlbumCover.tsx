@@ -21,30 +21,25 @@ export const AlbumCover: React.FC<AlbumCoverProps> = ({ maxSize, minSize }) => {
         containerSize = containerSize < maxSize ? (containerSize < minSize ? minSize : containerSize) : maxSize;
         const halfContainerSize = containerSize / 2;
         return (
-          <div
+
+          <motion.img
             style={{
               width: containerSize,
               height: containerSize,
-              top: 0,
               left: (width / 2) - halfContainerSize,
-              position: 'relative',
-              marginBottom: Constants.THIRTY_TWO,
             }}
-          >
-            <motion.img
-              css={css`
-                object-fit: contain;
-                height: 100%;
-                box-shadow: ${Constants.TEXT_SHADOW};
-                cursor: pointer;
-                opacity: 1;
-              `}
-              onClick={() => history.push('/about')}
-              src={rollingBlueAlbumCover}
-              whileHover={{ scale: 1.005 }}
-              transition={{ scale: { type: 'spring', damping: 2, mass: 0.1 } }}
-            />
-          </div>
+            css={css`
+              position: relative;
+              margin-bottom: ${Constants.THIRTY_TWO}px;
+              box-shadow: ${Constants.TEXT_SHADOW};
+              cursor: pointer;
+              opacity: 1;
+            `}
+            onClick={() => history.push('/about')}
+            src={rollingBlueAlbumCover}
+            whileHover={{ scale: 1.005 }}
+            transition={{ scale: { type: 'spring', damping: 2, mass: 0.1 } }}
+          />
         )
       }}
     </AutoSizer>
