@@ -5,6 +5,8 @@ import { Color } from '../shared/colors';
 import { screenWidthAt } from '../shared/utils';
 import { SocialMediaLinks } from '../socialMediaLinks/SocialMediaLinks';
 import { AlbumCover } from './AlbumCover';
+import { AutoSizer } from 'react-virtualized';
+import { YouTubeDebounced } from '../shared/YouTubeDebounced';
 
 export const Music: React.FC = () => {
   return (
@@ -50,10 +52,24 @@ export const Music: React.FC = () => {
             display: flex;
           `}
         >
-          <AlbumCover 
+          <AutoSizer disableHeight>
+            {
+              ({ width }) => {
+                const height = width * (9 / 16);
+                return (
+                  <YouTubeDebounced
+                    videoId='sNN99t8exSw'
+                    width={width}
+                    height={height}
+                  />
+                );
+              }
+            }
+          </AutoSizer>
+          {/* <AlbumCover 
             maxSize={900} 
             minSize={320}
-          />
+          /> */}
         </div>
       </div>
     </div>
