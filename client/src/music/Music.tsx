@@ -55,21 +55,16 @@ export const Music: React.FC = () => {
           <AutoSizer disableHeight>
             {
               ({ width }) => {
-                const height = width * (9 / 16);
                 return (
                   <YouTubeDebounced
                     videoId='sNN99t8exSw'
                     width={width}
-                    height={height}
+                    height={width * (9 / 16)}
                   />
                 );
               }
             }
           </AutoSizer>
-          {/* <AlbumCover 
-            maxSize={900} 
-            minSize={320}
-          /> */}
         </div>
       </div>
     </div>
