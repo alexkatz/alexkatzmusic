@@ -9,13 +9,11 @@ interface YouTubeDebouncedProps {
 }
 
 export const YouTubeDebounced: React.FC<YouTubeDebouncedProps> = debounceRender(({ videoId, width, height }) => (
-  <div style={{ width, height, backgroundColor: 'black' }}>
-    <YouTube
-      videoId={videoId}
-      opts={{
-        width,
-        height,
-      }}
-    />
-  </div>
+  <YouTube
+    videoId={videoId}
+    opts={{
+      width,
+      height,
+    }}
+  />
 ), 800);

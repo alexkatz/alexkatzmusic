@@ -12,6 +12,6 @@ export const Studio: React.FC = () => (
       color: ${Color.WHITE};
     `}
   >
-    coming soon. 🤘
+    content coming soon. 🤘
   </div >
 );

@@ -1,6 +1,6 @@
 export enum HeaderItemName {
   MUSIC = 'music',
   STUDIO = 'studio',
-  APPS = 'apps',
+  APPS = 'code',
   ABOUT = 'about',
 }

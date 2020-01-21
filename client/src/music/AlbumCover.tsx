@@ -3,7 +3,7 @@ import { css } from '@emotion/core';
 import { AutoSizer } from 'react-virtualized';
 import { motion } from 'framer-motion';
 import { useHistory } from 'react-router-dom';
-import { Constants } from '../shared/constants';
+import { Constant } from '../shared/constants';
 import { Color } from '../shared/colors';
 import rollingBlueAlbumCover from '../assets/image/rolling_blue_album_art_1024.jpg';
 
@@ -30,8 +30,8 @@ export const AlbumCover: React.FC<AlbumCoverProps> = ({ maxSize, minSize }) => {
             }}
             css={css`
               position: relative;
-              margin-bottom: ${Constants.THIRTY_TWO}px;
-              box-shadow: ${Constants.TEXT_SHADOW};
+              margin-bottom: ${Constant.THIRTY_TWO}px;
+              box-shadow: ${Constant.TEXT_SHADOW};
               cursor: pointer;
               opacity: 1;
             `}

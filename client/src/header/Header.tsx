@@ -1,6 +1,6 @@
 import React from 'react';
 import { css } from '@emotion/core';
-import { Constants } from '../shared/constants';
+import { Constant } from '../shared/constants';
 import { HeaderItem } from './HeaderItem';
 import { useHistory, useParams } from 'react-router-dom';
 import { HeaderItemName } from '../shared/HeaderItemName';
@@ -16,9 +16,9 @@ export const Header: React.FC = () => {
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        padding-right: ${Constants.EIGHT}px;
-        padding-left: ${Constants.EIGHT}px;
-        text-shadow: ${Constants.TEXT_SHADOW};
+        padding-right: ${Constant.EIGHT}px;
+        padding-left: ${Constant.EIGHT}px;
+        text-shadow: ${Constant.TEXT_SHADOW};
       `}
     >
       <div
@@ -29,12 +29,12 @@ export const Header: React.FC = () => {
           display: flex;
           justify-content: center;
           align-items: center;
-          padding-left: ${Constants.SIXTEEN}px;
+          padding-left: ${Constant.SIXTEEN}px;
           margin-right: auto;
           opacity: 0.5;
         `}
       >
-        {Constants.HEADER_TITLE}
+        {Constant.HEADER_TITLE}
       </div>
       {
         Object.keys(HeaderItemName).map((key, index, array) => {

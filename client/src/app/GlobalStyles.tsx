@@ -3,7 +3,7 @@ import { Global, css } from '@emotion/core';
 import { Color } from '../shared/colors';
 import muliExtraLight from '../assets/font/Muli-ExtraLight.ttf';
 import muliRegular from '../assets/font/Muli-Regular.ttf';
-import { Constants } from '../shared/constants';
+import { Constant } from '../shared/constants';
 import skyblurbackground from '../assets/image/skyblurbackground.jpg';
 import rollingBlueAlbumCover from '../assets/image/rolling_blue_album_art_1024.png';
 
@@ -63,7 +63,7 @@ export const GlobalStyles: React.FC = () => (
       #root {
         display: grid;
         height: 100%;
-        grid-template-rows: ${Constants.HEADER_SIZE}px auto;
+        grid-template-rows: ${Constant.HEADER_SIZE}px auto;
         grid-template-columns: auto;
       }
     `}

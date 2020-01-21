@@ -3,7 +3,7 @@ import { css } from '@emotion/core';
 import { Color } from '../shared/colors';
 import rollingBlueAlbumCover from '../assets/image/rolling_blue_album_art_1024.jpg';
 import { screenWidthAt } from '../shared/utils';
-import { Constants } from '../shared/constants';
+import { Constant } from '../shared/constants';
 import { motion } from 'framer-motion';
 import { useHistory } from 'react-router-dom';
 
@@ -16,19 +16,19 @@ export const About: React.FC = () => {
         display: grid;
         grid-template-columns: auto [content-column-start] 1200px [content-column-end] auto;  
         color: ${Color.WHITE};
-        text-shadow: ${Constants.TEXT_SHADOW};
+        text-shadow: ${Constant.TEXT_SHADOW};
         height: 80%;
         align-items: center;
 
-        ${screenWidthAt(Constants.MEDIA_BREAKPOINTS.SMALLER_DESKTOP)} {
+        ${screenWidthAt(Constant.MEDIA_BREAKPOINTS.SMALLER_DESKTOP)} {
           grid-template-columns: auto [content-column-start] 85% [content-column-end] auto;  
         }
 
-        ${screenWidthAt(Constants.MEDIA_BREAKPOINTS.TABLET)} {
+        ${screenWidthAt(Constant.MEDIA_BREAKPOINTS.TABLET)} {
           grid-template-columns: auto [content-column-start] 578px [content-column-end] auto;  
         }
 
-        ${screenWidthAt(Constants.MEDIA_BREAKPOINTS.MOBILE)} {
+        ${screenWidthAt(Constant.MEDIA_BREAKPOINTS.MOBILE)} {
           align-items: flex-start;
           grid-template-columns: [content-column-start] auto [content-column-end];  
         }
@@ -40,11 +40,11 @@ export const About: React.FC = () => {
           display: grid;
           grid-template-rows: auto 1fr;
 
-          ${screenWidthAt(Constants.MEDIA_BREAKPOINTS.SMALLER_DESKTOP)} {
+          ${screenWidthAt(Constant.MEDIA_BREAKPOINTS.SMALLER_DESKTOP)} {
             font-size: 15px;
           }
           
-          ${screenWidthAt(Constants.MEDIA_BREAKPOINTS.TABLET)} {
+          ${screenWidthAt(Constant.MEDIA_BREAKPOINTS.TABLET)} {
             font-size: 14px;
           }
 
@@ -55,8 +55,8 @@ export const About: React.FC = () => {
       >
         <div
           css={css`
-            padding-left: ${Constants.SIXTEEN}px;
-            padding-right: ${Constants.SIXTEEN}px;
+            padding-left: ${Constant.SIXTEEN}px;
+            padding-right: ${Constant.SIXTEEN}px;
           `}
         >
           <motion.img
@@ -64,9 +64,9 @@ export const About: React.FC = () => {
               grid-column-start: album-start;
               width: 60%;
               float: right;
-              margin-bottom: ${Constants.SIXTEEN}px;
-              margin-left: ${Constants.THIRTY_TWO}px;
-              box-shadow: ${Constants.TEXT_SHADOW};
+              margin-bottom: ${Constant.SIXTEEN}px;
+              margin-left: ${Constant.THIRTY_TWO}px;
+              box-shadow: ${Constant.TEXT_SHADOW};
               cursor: pointer;
             `}
             onClick={() => history.push('/')}

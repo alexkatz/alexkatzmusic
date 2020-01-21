@@ -1,6 +1,6 @@
 import React from 'react';
 import { css } from '@emotion/core';
-import { Constants } from '../shared/constants';
+import { Constant } from '../shared/constants';
 import { motion } from 'framer-motion';
 import { Color } from '../shared/colors';
 
@@ -32,8 +32,8 @@ export const HeaderItem: React.FC<HeaderItemProps> = ({ text, isHighlighted, onC
           font-size: 12px;
         }
 
-        margin-left: ${Constants.SIXTEEN}px;
-        margin-right: ${Constants.SIXTEEN}px;
+        margin-left: ${Constant.SIXTEEN}px;
+        margin-right: ${Constant.SIXTEEN}px;
         color: ${Color.WHITE};
         font-family: ${isHighlighted ? 'Muli-Regular' : 'Muli-ExtraLight'};
         cursor: pointer;

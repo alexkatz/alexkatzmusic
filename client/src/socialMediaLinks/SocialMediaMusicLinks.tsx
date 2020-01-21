@@ -8,7 +8,7 @@ import bandcampSvg from '../assets/vector/bandcamp-logo.svg';
 import googleSvg from '../assets/vector/google-play-logo.svg';
 import instagramSvg from '../assets/vector/instagram-logo.svg';
 import facebookSvg from '../assets/vector/facebook-logo.svg';
-import { Constants } from '../shared/constants';
+import { Constant } from '../shared/constants';
 import { screenWidthAt } from '../shared/utils';
 
 const SOCIAL_MEDIA_LINKS: { svg: string; url: string; }[][] = [
@@ -27,7 +27,7 @@ const SOCIAL_MEDIA_LINKS: { svg: string; url: string; }[][] = [
   ],
 ];
 
-export const SocialMediaLinks: React.FC = props => (
+export const SocialMediaMusicLinks: React.FC = props => (
   <div
     css={css`
       width: 100%;
@@ -42,7 +42,7 @@ export const SocialMediaLinks: React.FC = props => (
           display: flex;
           justify-content: center;
           ${svgsIndex !== svgLinks.length && css`
-            margin-bottom: ${Constants.THIRTY_TWO}px;
+            margin-bottom: ${Constant.THIRTY_TWO}px;
           `}
         `}
         >
@@ -54,17 +54,16 @@ export const SocialMediaLinks: React.FC = props => (
                 svg={svg}
                 css={css`
                   height: 30px;
-                  opacity: 0.4;
 
-                  ${screenWidthAt(Constants.MEDIA_BREAKPOINTS.SMALLER_DESKTOP)} {
+                  ${screenWidthAt(Constant.MEDIA_BREAKPOINTS.SMALLER_DESKTOP)} {
                     height: 30px;
                   }
     
-                  ${screenWidthAt(Constants.MEDIA_BREAKPOINTS.TABLET)} {
+                  ${screenWidthAt(Constant.MEDIA_BREAKPOINTS.TABLET)} {
                     height: 30px;
                   }
 
-                  ${screenWidthAt(Constants.MEDIA_BREAKPOINTS.MOBILE)} {
+                  ${screenWidthAt(Constant.MEDIA_BREAKPOINTS.MOBILE)} {
                     height: 20px;
                   }
     

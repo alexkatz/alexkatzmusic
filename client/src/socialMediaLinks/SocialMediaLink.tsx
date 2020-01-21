@@ -14,6 +14,7 @@ export const SocialMediaLink: React.FC<SocialMediaLinkProps & MotionProps> = ({ 
       cursor: pointer;
       display: flex;
       align-items: center;
+      opacity: 0.4;
     `}
     transition={{
       scale: { type: 'spring', damping: 2, mass: 0.1 },

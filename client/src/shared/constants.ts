@@ -1,4 +1,4 @@
-export const Constants = {
+export const Constant = {
   EIGHT: 8,
   SIXTEEN: 16,
   TWENTY_FOUR: 24,
